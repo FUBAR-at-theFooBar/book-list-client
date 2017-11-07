@@ -3,10 +3,10 @@
 var app = app || {};
 var __API_URL__ = 'https://ncjh-booklist.herokuapp.com';
 
-(function(module) {
-  function errorCallback(err) {
-    module.errorView.initErrorPage(err);
-  }
-
-
-})
+function fetchAll = callback => {
+  $.get('/api/v1/books')
+    .then(results => {
+      console.log(results);
+      callback();
+    })
+};

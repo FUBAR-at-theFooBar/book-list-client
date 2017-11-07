@@ -1,0 +1,38 @@
+header {
+  border: solid 1px;
+  min-height: 100px;
+  width: 100%;
+}
+
+h1 {
+  font-weight: 100;
+  font-size: 1.5em;
+  margin: 2em;
+}
+
+main {
+  border: solid 1px;
+  width: 100%;
+}
+
+h2 {
+  font-size: 1.5em;
+  font-weight: 100;
+  text-decoration: underline;
+  margin: 3em 2em 2em 2em;
+  }
+
+section {
+  width: 92%;
+  margin: 0 auto;
+  height: 27em;
+  border: solid 1px black;
+  margin-bottom: 3.5em;
+  border-radius: 0.5em;
+  overflow: hidden;
+}
+section img {
+  object-fit: cover;
+  width: 100%;
+  /*min-height: 15em;*/
+}

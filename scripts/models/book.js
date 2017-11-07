@@ -10,3 +10,5 @@ function fetchAll = callback => {
       callback();
     })
 };
+
+console.log('test');

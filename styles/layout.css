@@ -1,38 +1,64 @@
 header {
-  border: solid 1px;
+  border: solid 1px #ff7a8f;
   min-height: 100px;
   width: 100%;
+  background: #ff7a8f;
 }
 
 h1 {
   font-weight: 100;
-  font-size: 1.5em;
-  margin: 2em;
+  font-size: 1.4em;
+  margin: 1.5em 1em;
+  color: #ffeaed;
 }
 
 main {
-  border: solid 1px;
+  border: solid 1px #ffccd4;
   width: 100%;
+  background: #ffccd4;
 }
 
 h2 {
   font-size: 1.5em;
   font-weight: 100;
   text-decoration: underline;
-  margin: 3em 2em 2em 2em;
+  margin: 2.5em 1em 1.5em 1em;
+  color: #8c2440;
   }
 
 section {
   width: 92%;
   margin: 0 auto;
-  height: 27em;
-  border: solid 1px black;
-  margin-bottom: 3.5em;
-  border-radius: 0.5em;
+  height: 25em;
+  margin-bottom: 2.5em;
+  border-top-right-radius: 0.3em;
+  border-top-left-radius: 0.3em;
+  overflow: hidden;
+  background: #ff7a8f;
+  color: #ffeaed;
+  box-shadow: 1px 1px 2px #8c2440;
+}
+
+.bookimg {
+  height: 16em;
   overflow: hidden;
 }
+
 section img {
-  object-fit: cover;
   width: 100%;
-  /*min-height: 15em;*/
+}
+
+h3 {
+  font-size: 1.5em;
+  font-weight: 100;
+  margin: 4%;
+  margin-bottom: 0;
+}
+
+h4 {
+  font-size: 1em;
+  font-weight: 100;
+  margin: 4%;
+  margin-top: 3%;
+  font-style: italic;
 }

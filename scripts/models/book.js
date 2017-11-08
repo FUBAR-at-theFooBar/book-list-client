@@ -44,8 +44,6 @@ var __API_URL__ = 'https://ncjh-booklist.herokuapp.com';
       .catch (errorCallback);
   }
 
-
-
 //   module.Book = Book;
 // })(app);
 

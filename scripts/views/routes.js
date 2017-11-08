@@ -1,5 +1,6 @@
 'use strict'
 
+<<<<<<< HEAD
 page('/', ctx => {console.log('page connect /');
   app.Book.fetchAll(app.bookView.initIndexPage)});
 // page('/books/:book_id', ctx => app.Book.fetchOne(app.bookView.initIndexPage)); //needs to connect to #detail-main;
@@ -13,10 +14,38 @@ page('/books/new', ctx => app.Book.fetchAll(app.bookView.initIndexPage))//needs 
 
 // page('/', ctx => app.Task.fetchAll(app.taskView.initIndexPage));
 // page('/tasks/add', ctx => app.taskView.initAddForm(ctx));
+=======
+page('/', ctx => app.Book.fetchAll(app.bookView.initIndexPage));
+page('/books/new', ctx => app.bookView.initFormPage(ctx));//needs to connect to #form-main;
+page('/books/:book_id', ctx => app.Book.fetchOne(ctx, app.bookView.initDetailPage)); //needs to connect to #detail-main;
+>>>>>>> f37f32c93d2a629804fc0cfecf76acc6b6524afd
 page();
 //
 
 
+<<<<<<< HEAD
+=======
+//adding click functions here
+$('book-main').click(()=>{
+  app.Book.fetchOne(app.bookView.initDetailPage)
+})
+
+$('#Book1').click(()=>{
+  app.Book.fetchOne(app.bookView.initDetailPage)
+})
+$('#Book2').click(()=>{
+  app.Book.fetchOne(app.bookView.initDetailPage)
+})
+$('#Book3').click(()=>{
+  app.Book.fetchOne(app.bookView.initDetailPage)
+})
+$('#Book4').click(()=>{
+  app.Book.fetchOne(app.bookView.initDetailPage)
+})
+$('#Book5').click(()=>{
+  app.Book.fetchOne(app.bookView.initDetailPage)
+})
+>>>>>>> f37f32c93d2a629804fc0cfecf76acc6b6524afd
 
 //
 // //in server.js add body parser

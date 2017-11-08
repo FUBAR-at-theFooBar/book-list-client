@@ -10,6 +10,21 @@
     <link rel="stylesheet" href="styles/layout.css">
     <link rel="stylesheet" href="styles/modules.css">
   </head>
+
+  <script id="booklist-template" type="text/x-handlebars-template">
+    <section>
+      <div class="bookimg">
+        <img src="{{image_url}}" />
+      </div>
+      <h3>{{title}}</h3>
+      <h4>{{author}}</h4>
+      <!-- {{isbn}}
+
+      <div class="description">{{description}}</div>
+      <a href="#" class="read-on">Read on &rarr;</a> -->
+    </section>
+  </script>
+
   <body>
     <div id="wrapper">
       <header>
@@ -17,21 +32,7 @@
       </header>
       <main>
         <h2>my books</h2>
-        <section>
-          <div class="bookimg">
-            <img src="arnold.jpg" />
-          </div>
-          <h3>book title</h3>
-          <h4>author</h4>
-        </section>
-        <section>
-          <div class="bookimg">
-            <img src="https://books.google.com/books/content?id=BcG2dVRXKukC&printsec=frontcover&img=1&zoom=5&source=gbs_api" />
-            <h3>book title</h3>
-            <h4>author</h4>
-          </div>
-        </section>
-        <section></section>
+        <!---append Handlebars sections here-->
 
       </main>
     </div>

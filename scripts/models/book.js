@@ -22,7 +22,7 @@ var __API_URL__ = 'https://ncjh-booklist.herokuapp.com';
 
   // Renders all of the Book objects to HTML using the Handlebars template in index.html
   Book.prototype.toHtml = function() {
-    var template = Handlebars.compile($('#book-template').text());
+    var template = Handlebars.compile($('#booklist-template').text());
     return template(this);
   }
 
@@ -40,7 +40,7 @@ var __API_URL__ = 'https://ncjh-booklist.herokuapp.com';
     $.get(`${__API_URL__}/api/v1/books`)
       .then (results => {
         Book.loadAll(results);
-        if (callback) callback();
+        callback();
       })
       .catch (errorCallback);
   }

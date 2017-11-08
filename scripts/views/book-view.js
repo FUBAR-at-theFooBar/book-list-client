@@ -6,9 +6,19 @@ var app = app || {};
 
   bookView.initIndexPage = () => {
     $('.container').hide();
-    $('.book-view').show();
+    $('#book-main').show();
 
-    app.Book.all.forEach(a => $('main').append(a.toHtml()));
+    app.Book.all.forEach(a => $('#book-main').append(a.toHtml()));
+  }
+
+  bookView.initDetailPage = () => {
+    $('.container').hide();
+    $('#detail-main').show();
+  }
+
+  bookView.initFormPage = () => {
+    $('.container').hide();
+    $('#form-main').show();
   }
 
 
@@ -16,4 +26,4 @@ var app = app || {};
   module.bookView = bookView;
 })(app);
 
-$(app.Book.fetchAll(app.bookView.initIndexPage))
+// $(app.Book.fetchAll(app.bookView.initIndexPage))

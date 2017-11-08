@@ -12,7 +12,7 @@
   </head>
 
   <script id="booklist-template" type="text/x-handlebars-template">
-    <section class="book-main book-main-section">
+    <section class="book-main book-main-section" data-fetchone=""{{book_id}}>
       <div>
         <img src="{{image_url}}" />
       </div>
@@ -37,15 +37,23 @@
       </header>
 
       <div id="book-main" class="main-div clearfix container">
-
+        <button id="Book1">Book 1</button>
+        <button id="Book2">Book 2</button>
+        <button id="Book3">Book 3</button>
+        <button id="Book4">Book 4</button>
+        <button id="Book5">Book 5</button>
         <h2>my books</h2>
+
+
         <!---append Handlebars template to main-->
+        <!-- all books go here -->
       </div>
 
 
 
 
       <div id="detail-main" class="main-div clearfix container">
+        <!-- one book goes here -->
         <h2>book title</h2>
         <h3>author</h3>
         <h4>isbn 12345</h4>
@@ -64,6 +72,7 @@
 
 
       <div id="form-main" class="main-div clearfix container">
+        <!-- new book is made here -->
         <h2>add a new book</h2>
 
         <form id="addBook">

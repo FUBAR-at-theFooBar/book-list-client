@@ -45,5 +45,24 @@ var __API_URL__ = 'https://ncjh-booklist.herokuapp.com';
       .catch (errorCallback);
   }
 
+  Book.fetchOne = callback => {
+    $.get(`${__API_URL__}/api/v1/books/${this.book_id}`)
+      .then (results => {
+        Book.loadAll(results);
+        callback();
+      })
+      .catch (errorCallback);
+  }
+
+  Book.create = callback => {
+    $.post(`${__API_URL__}/api/v1/books`, {
+      title: this.title,
+      author: this.author,
+      image_url: this.image_url,
+      isbn: this.isbn,
+      description: this.description})
+      .then(callback);
+  }
+
   module.Book = Book;
 })(app);

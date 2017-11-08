@@ -2,6 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book List Client</title>
     <link rel="stylesheet" href="styles/reset.css">
     <link rel="stylesheet" href="styles/icons.css">
@@ -9,8 +10,32 @@
     <link rel="stylesheet" href="styles/layout.css">
     <link rel="stylesheet" href="styles/modules.css">
   </head>
+
+  <script id="booklist-template" type="text/x-handlebars-template">
+    <section>
+      <div class="bookimg">
+        <img src="{{image_url}}" />
+      </div>
+      <h3>{{title}}</h3>
+      <h4>{{author}}</h4>
+      <!-- {{isbn}}
+
+      <div class="description">{{description}}</div>
+      <a href="#" class="read-on">Read on &rarr;</a> -->
+    </section>
+  </script>
+
   <body>
-    Index Page.
+    <div id="wrapper">
+      <header>
+        <h1>books app</h1>
+      </header>
+      <main>
+        <h2>my books</h2>
+        <!---append Handlebars sections here-->
+
+      </main>
+    </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
     <script type="text/javascript" src="scripts/models/book.js"></script>

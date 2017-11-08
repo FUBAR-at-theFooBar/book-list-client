@@ -2,6 +2,7 @@
 
 var app = app || {};
 var __API_URL__ = 'https://ncjh-booklist.herokuapp.com';
+// var __API_URL__ = 'https://localhost:3000'
 
 (function(module){
 
@@ -44,13 +45,13 @@ var __API_URL__ = 'https://ncjh-booklist.herokuapp.com';
       .catch (errorCallback);
   }
 
-  Book.fetchOne = callback => {
-    $.get(`${__API_URL__}/api/v1/books/${this.book_id}`)
+  Book.fetchOne = (ctx, callback) => {
+    $.get(`${__API_URL__}/api/v1/books/${ctx.params.book_id}`)
     // $.get(`${__API_URL__}/api/v1/books/1`)
 
       .then (results => {
-        console.log(results);
-        Book.loadAll(results);
+        ctx.book = results[0];
+        // Book.loadAll(results);//JB DOES NOT HAVE THIS IN HIS  FETCHONE
         callback();
       })
       .catch (errorCallback);
@@ -64,6 +65,12 @@ var __API_URL__ = 'https://ncjh-booklist.herokuapp.com';
       isbn: this.isbn,
       description: this.description})
       .then(callback);
+  }
+
+  Book.create = book => {
+    $.post(`${__API_URL__}/api/v1/books`, book)
+      .then(() => page('/'))
+      .catch(errorCallback);
   }
 
   module.Book = Book;

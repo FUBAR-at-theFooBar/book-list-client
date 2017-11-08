@@ -1,0 +1,36 @@
+section {
+  width: 92%;
+  margin: 0 auto;
+  height: 25em;
+  margin-bottom: 2.5em;
+  border-top-right-radius: 0.3em;
+  border-top-left-radius: 0.3em;
+  overflow: hidden;
+  background: #ff7a8f;
+  color: #ffeaed;
+  box-shadow: 1px 1px 2px #8c2440;
+}
+
+.bookimg {
+  height: 16em;
+  overflow: hidden;
+}
+
+section img {
+  width: 100%;
+}
+
+h3 {
+  font-size: 1.5em;
+  font-weight: 100;
+  margin: 4%;
+  margin-bottom: 0;
+}
+
+h4 {
+  font-size: 1em;
+  font-weight: 100;
+  margin: 4%;
+  margin-top: 3%;
+  font-style: italic;
+}

@@ -8,7 +8,7 @@ var app = app || {};
     $('.container').hide();
     $('.book-view').show();
 
-    app.Book.all.forEach(a => $('main').append(a.toHtml()));
+    app.Book.all.forEach(a => $('#book-main').append(a.toHtml()));
   }
 
 

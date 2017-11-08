@@ -46,7 +46,9 @@ var __API_URL__ = 'https://ncjh-booklist.herokuapp.com';
   }
 
   Book.fetchOne = callback => {
-    $.get(`${__API_URL__}/api/v1/books/${this.book_id}`)
+    // $.get(`${__API_URL__}/api/v1/books/${this.book_id}`)
+    $.get(`${__API_URL__}/api/v1/books/1`)
+
       .then (results => {
         Book.loadAll(results);
         callback();

@@ -1,13 +1,20 @@
 'use strict'
 
-// page('/', ctx => app.Book.fetchAll(app.bookView.initIndexPage));
-page('/', ctx => app.bookView.initIndexPage);
+page('/', ctx => {console.log('page connect /');
+  app.Book.fetchAll(app.bookView.initIndexPage)});
+// page('/books/:book_id', ctx => app.Book.fetchOne(app.bookView.initIndexPage)); //needs to connect to #detail-main;
+page('/books/1', ctx => {console.log('page connect /books/:book_id');
+  app.Book.fetchAll(app.bookView.initIndexPage)}); //needs to connect to #detail-main;
+
+page('/books/new', ctx => app.Book.fetchAll(app.bookView.initIndexPage))//needs to connect to #form-main;
+
+// page('/', app.bookView.initIndexPage);
 
 
 // page('/', ctx => app.Task.fetchAll(app.taskView.initIndexPage));
 // page('/tasks/add', ctx => app.taskView.initAddForm(ctx));
 page();
-
+//
 
 
 

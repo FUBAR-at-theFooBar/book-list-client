@@ -12,16 +12,12 @@
   </head>
 
   <script id="booklist-template" type="text/x-handlebars-template">
-    <section>
-      <div class="bookimg">
+    <section class="book-main book-main-section">
+      <div>
         <img src="{{image_url}}" />
       </div>
       <h3>{{title}}</h3>
       <h4>{{author}}</h4>
-      <!-- {{isbn}}
-
-      <div class="description">{{description}}</div>
-      <a href="#" class="read-on">Read on &rarr;</a> -->
     </section>
   </script>
 
@@ -30,12 +26,67 @@
       <header>
         <h1><img src="https://avatars2.githubusercontent.com/u/18607604?v=3&s=51"> books app</h1>
 
-      </header>
-      <main>
-        <h2>my books</h2>
-        <!---append Handlebars sections here-->
+        <nav class="main-nav">
+          <div class="icon-menu"></div>
+          <ul>
+            <li class="tab" data-content="viewbooks"><a href="#"> View All Books</a></li>
+            <li class="tab" data-content="addbook"><a href="#"> Add A New Book</a></li>
+          </ul>
+        </nav>
 
-      </main>
+      </header>
+
+      <div id="book-main" class="main-div clearfix container">
+
+        <h2>my books</h2>
+        <!---append Handlebars template to main-->
+      </div>
+
+
+
+
+      <div id="detail-main" class="main-div clearfix container">
+        <h2>book title</h2>
+        <h3>author</h3>
+        <h4>isbn 12345</h4>
+
+        <br />
+        <img src="https://books.google.com/books/content?id=BcG2dVRXKukC&printsec=frontcover&img=1&zoom=5&source=gbs_api" />
+
+        <p>
+          Lorem ipsum dolor sit amet, recusabo suscipiantur te sit, sit eius placerat ei. Sumo aeterno et ius, munere aperiam eum ei. Essent verear veritus cu has. Ius id senserit posidonium definitionem. Nostrud consequuntur in vel, nam no luptatum intellegat. Nonumes posidonium definitionem eu quo, id quo nihil maluisset. Sea ne splendide referrentur. Sea et melius moderatius, pri tota graece aperiam eu. Ei pri dicat utinam libris, virtute perpetua interpretaris sea no. Ei mel graeco disputando, inani eloquentiam et vix.
+
+          <a id="readmore" href="#"> ...read more</a></span>
+        </p>
+      </div>
+
+
+
+
+      <div id="form-main" class="main-div clearfix">
+        <h2>add a new book</h2>
+
+        <form id="addBook">
+          <input type="text" id="title" name="title" placeholder="title" />
+
+          <input type="text" id="author" name="author" placeholder="author" />
+
+          <input type="text" id="isbn" name="isbn" placeholder="isbn" />
+
+          <input type="text" id="imageurl" name="imageurl" placeholder="image url" />
+
+          <textarea rows="3" id="description" name="description" placeholder="description..."></textarea>
+
+          <button type="submit" id="submitAddBook">submit</button>
+        </form>
+      </div>
+
+
+
+
+
+
+
       <footer>
 <a href ="#" class="icon-github"></a>
 <a href ="#" class="icon-twitter3"></a>

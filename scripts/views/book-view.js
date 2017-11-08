@@ -1,12 +1,19 @@
 'use strict';
 var app = app || {};
 
-//(function(module) {
+(function(module) {
   var bookView = {};
 
   bookView.initIndexPage = () => {
-    Book.all.forEach(a => {$('main').append(a.toHtml()); console.log(a.toHtml()); });
+    $('.container').hide();
+    $('.book-view').show();
+
+    app.Book.all.forEach(a => $('main').append(a.toHtml()));
   }
 
-  // module.bookView = bookView;
-//})(app);
+
+
+  module.bookView = bookView;
+})(app);
+
+$(app.Book.fetchAll(app.bookView.initIndexPage))

@@ -26,7 +26,7 @@ var __API_URL__ = 'https://ncjh-booklist.herokuapp.com';
   }
 
   /* Why does toHtml have a protoype and loadAll doesn't again? */
-  Book.loadAll => rawData => {
+  Book.loadAll = rawData => {
     /* What are we sorting by? */
     // rawData.sort((a, b) => )
 

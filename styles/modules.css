@@ -1,0 +1,25 @@
+
+.bookimg {
+  height: 16em;
+  overflow: hidden;
+}
+
+section img {
+  width: 100%;
+  object-fit: cover;
+}
+
+h3 {
+  font-size: 1.5em;
+  font-weight: 100;
+  margin: 4%;
+  margin-bottom: 0;
+}
+
+h4 {
+  font-size: 1em;
+  font-weight: 100;
+  margin: 4%;
+  margin-top: 3%;
+  font-style: italic;
+}

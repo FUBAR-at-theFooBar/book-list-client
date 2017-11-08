@@ -13,20 +13,18 @@ h1 {
   color: #ffeaed;
 }
 
+h1 img {
+  vertical-align: middle;
+  padding-right: 10px;
+}
+
 main {
   border: solid 1px #ffccd4;
   width: 100%;
   background: #ffccd4;
   box-shadow: 0 0 2px #8c2440;
+  padding-bottom: 6em;
 }
-
-h2 {
-  font-size: 1.5em;
-  font-weight: 100;
-  text-decoration: underline;
-  margin: 2.5em 1em 1.5em 1em;
-  color: #8c2440;
-  }
 
 section {
   width: 92%;
@@ -41,26 +39,18 @@ section {
   box-shadow: 1px 1px 2px #8c2440;
 }
 
-.bookimg {
-  height: 16em;
-  overflow: hidden;
-}
-
-section img {
-  width: 100%;
-}
-
-h3 {
+h2 {
   font-size: 1.5em;
   font-weight: 100;
-  margin: 4%;
-  margin-bottom: 0;
-}
+  text-decoration: underline;
+  margin: 2.5em 1em 1.5em 1em;
+  color: #8c2440;
+  }
 
-h4 {
-  font-size: 1em;
-  font-weight: 100;
-  margin: 4%;
-  margin-top: 3%;
-  font-style: italic;
+footer {
+  min-height: 160px;
+  text-align: right;
+  padding: 1em;
+  background: #ff7a8f;
+  box-shadow: 0 0 2px #8c2440;
 }

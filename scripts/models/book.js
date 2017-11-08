@@ -3,11 +3,12 @@
 var app = app || {};
 var __API_URL__ = 'https://ncjh-booklist.herokuapp.com';
 
-// (function(module){
+(function(module){
 
-  /* What is this function doing? */
+
   function errorCallback(err) {
     console.error(err);
+    /* What is this line doing? */
     module.errorView.initErrorPage(err);
   }
 
@@ -21,12 +22,12 @@ var __API_URL__ = 'https://ncjh-booklist.herokuapp.com';
 
   // Renders all of the Book objects to HTML using the Handlebars template in index.html
   Book.prototype.toHtml = function() {
-    var template = Handlebars.compile($('#book-template').text());
+    var template = Handlebars.compile($('#booklist-template').text());
     return template(this);
   }
 
   /* Why does toHtml have a protoype and loadAll doesn't again? */
-  Book.loadAll => rawData => {
+  Book.loadAll = rawData => {
     /* What are we sorting by? */
     // rawData.sort((a, b) => )
 
@@ -39,14 +40,10 @@ var __API_URL__ = 'https://ncjh-booklist.herokuapp.com';
     $.get(`${__API_URL__}/api/v1/books`)
       .then (results => {
         Book.loadAll(results);
-        if (callback) callback();
+        callback();
       })
       .catch (errorCallback);
   }
 
-
-
-//   module.Book = Book;
-// })(app);
-
-Book.fetchAll();
+  module.Book = Book;
+})(app);

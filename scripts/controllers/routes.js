@@ -6,7 +6,7 @@ page('/', ctx => {console.log('page connect /');
 page('/books/1', ctx => {console.log('page connect /books/:book_id');
   app.Book.fetchAll(app.bookView.initIndexPage)}); //needs to connect to #detail-main;
 
-page('/books/new', ctx => app.Book.fetchAll(app.bookView.initIndexPage))//needs to connect to #form-main;
+// page('/books/new', ctx => app.Book.fetchAll(app.bookView.initIndexPage))//needs to connect to #form-main;
 
 // page('/', app.bookView.initIndexPage);
 

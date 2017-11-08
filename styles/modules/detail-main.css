@@ -1,0 +1,33 @@
+#detail-main {
+  padding: 0 2em 2em 2em;
+}
+
+#detail-main h2 {
+  margin: 2.5em 0 0.5em 0;
+}
+
+#detail-main h3 {
+  display: inline-block;
+  font-style: italic;
+  float: left;
+}
+
+#detail-main h4 {
+  display: inline-block;
+  font-style: italic;
+  float: right;
+}
+
+#detail-main img {
+  width: 100%;
+  margin: 2em 0 1.2em 0;
+}
+
+#detail-main p {
+  line-height: 1.8em;
+  font-size: 0.95em;
+}
+
+#readmore {
+  font-weight: 900;
+}

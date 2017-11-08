@@ -5,9 +5,10 @@ var __API_URL__ = 'https://ncjh-booklist.herokuapp.com';
 
 // (function(module){
 
-  /* What is this function doing? */
+
   function errorCallback(err) {
     console.error(err);
+    /* What is this line doing? */
     module.errorView.initErrorPage(err);
   }
 

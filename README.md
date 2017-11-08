@@ -3,10 +3,10 @@
 ##### Joy Hou & Nicholas Carignan
 
 Project for Code 301, Week 3
-Version 1.1.0
+Version 1.2.0
 
 ## Overview
-We are building an application to track the books we want to read. It pulls from a JSON file and populates an api with a database containing book information. the client side can then pull the book list or specific books to display on their page.
+We are building an application to track the books we want to read. It pulls from a JSON file and populates an api with a database containing book information. the client side can then pull the book list or specific books to display on their page. we now have pagejs installed and working.
 
 ## Getting Started
 Write some Codez
@@ -27,10 +27,15 @@ Libraries: highlight.pack.js, marked.js, JQuery, Express, Postgres, Bodyparser, 
 800 Broke it again
 830 Rolled back to 730
 845 moved on to day 2
+### Nov 8
+9am kept working on pagejs functionality
+10am Did styling
+11 am went to gym/lunch
+1245 Finished pagejs, working on implementation
 
 ## Credits and Collaborations
 
-Nicholas C and Joy Hou 
+Nicholas C and Joy Hou
 NormalizeCSS - https://necolas.github.io/normalize.css/
 jQuery - https://jquery.com
 NodeJS - https://nodejs.org/en/

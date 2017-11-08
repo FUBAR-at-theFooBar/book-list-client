@@ -13,11 +13,30 @@ h1 {
   color: #ffeaed;
 }
 
+h1 img {
+  vertical-align: middle;
+  padding-right: 10px;
+}
+
 main {
   border: solid 1px #ffccd4;
   width: 100%;
   background: #ffccd4;
   box-shadow: 0 0 2px #8c2440;
+  padding-bottom: 6em;
+}
+
+section {
+  width: 92%;
+  margin: 0 auto;
+  height: 25em;
+  margin-bottom: 2.5em;
+  border-top-right-radius: 0.3em;
+  border-top-left-radius: 0.3em;
+  overflow: hidden;
+  background: #ff7a8f;
+  color: #ffeaed;
+  box-shadow: 1px 1px 2px #8c2440;
 }
 
 h2 {
@@ -27,3 +46,11 @@ h2 {
   margin: 2.5em 1em 1.5em 1em;
   color: #8c2440;
   }
+
+footer {
+  min-height: 160px;
+  text-align: right;
+  padding: 1em;
+  background: #ff7a8f;
+  box-shadow: 0 0 2px #8c2440;
+}

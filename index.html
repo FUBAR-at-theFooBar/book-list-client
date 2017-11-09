@@ -12,13 +12,13 @@
   </head>
 
   <script id="booklist-template" type="text/x-handlebars-template">
-    <section class="book-main book-main-section" data-fetchone="{{book_id}}">
+    <section class="book-main book-main-section">
       <div>
         <img src="{{image_url}}" />
       </div>
       <h3>{{title}}</h3>
       <h4>{{author}}</h4>
-      <button id="viewdetails">view details</button>
+      <button id="viewdetails" data-fetchone="{{book_id}}">view details</button>
     </section>
   </script>
 

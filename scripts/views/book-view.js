@@ -9,15 +9,10 @@ var app = app || {};
     $('.container').hide();
     $('#book-main').show();
     app.Book.all.forEach(a => $('#book-main').append(a.toHtml()));
-    // $('.book-main button').click(console.log($('.book-main button').data('fetchone'));
     $('.book-main').on('click', '#viewdetails',function(){
-      console.log('click');
-      console.log($(this).data('fetchone'));
       bookView.initDetailPage($(this).data('fetchone'));
     });
   }
-
-  // $('#books').on('click', '.books', function() {
 
   bookView.initDetailPage = (fetchone) => {
     $('.container').hide();
@@ -25,7 +20,25 @@ var app = app || {};
     $('#detail-main').show();
     // console.log(fetchone);
     $('#detail-main').append(app.Book.all[fetchone-1].detailToHtml());
+    bookView.setTeasers();
   }
+
+  bookView.setTeasers = () => {
+    let description = $('#detail-main p').text();
+    let teaser = $('#detail-main p').text().substr(0, 200) + '...';
+    $('#detail-main p').text(teaser);
+
+    $('#detail-main').on('click', '#readmore', function(e) {
+      e.preventDefault();
+      if ($('#detail-main p').text() === teaser) {
+        $('#detail-main p').text(description);
+        $(this).html('read less &larr;');
+      } else {
+        $(this).html('...read more');
+        $('#detail-main p').text(teaser);
+      }
+    });
+  };
 
   bookView.initFormPage = () => {
     console.log('form page show pls');

@@ -32,6 +32,11 @@
   font-weight: 900;
 }
 
+#readmore:hover {
+  cursor: default;
+  color: #e22d6c;
+}
+
 #detail-main button {
   margin: 1em 0.5em 0 1em;
   padding: 1em 2.5em;

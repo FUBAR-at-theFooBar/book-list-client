@@ -9,11 +9,30 @@ var app = app || {};
     $('.container').hide();
     $('#book-main').show();
     app.Book.all.forEach(a => $('#book-main').append(a.toHtml()));
+    // $('.book-main button').click(console.log($('.book-main button').data('fetchone'));
+    $('.book-main').on('click', '#viewdetails',function(){
+      console.log('click');
+      console.log($(this).data('fetchone'));
+      bookView.initDetailPage($(this).data('fetchone'));
+    });
   }
+
+  // $('#books').on('click', '.books', function() {
 
   bookView.initDetailPage = () => {
     $('.container').hide();
     $('#detail-main').show();
+
+
+
+
+  }
+
+  bookView.initFormPage = () => {
+    console.log('form page show pls');
+    $('.container').hide();
+    $('#form-main').show();
+
     $('#create-form').on('submit', function(event){
       event.preventDefault();
 
@@ -24,16 +43,9 @@ var app = app || {};
         isbn: event.target.isbn.value,
         description: event.target.description.value
       }
-
-
     })
   }
 
-  bookView.initFormPage = () => {
-    console.log('form page show pls');
-    $('.container').hide();
-    $('#form-main').show();
-  }
 
 
 

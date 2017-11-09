@@ -26,6 +26,11 @@ var __API_URL__ = 'https://ncjh-booklist.herokuapp.com';
     return template(this);
   }
 
+  Book.prototype.detailToHtml = function() {
+    var template = Handlebars.compile($('#detail-template').text());
+    return template(this);
+  }
+
   /* Why does toHtml have a protoype and loadAll doesn't again? */
   Book.loadAll = rawData => {
     /* What are we sorting by? */

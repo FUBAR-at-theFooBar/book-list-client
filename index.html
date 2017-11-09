@@ -11,6 +11,11 @@
     <link rel="stylesheet" href="styles/modules.css">
   </head>
 
+  <script id="error-template" type="text/x-handlebars-template">
+    <h3>Oops, something went wrong!</h3>
+    <p>{{status}}: {{statusText}}</p>
+  </script>
+
   <script id="booklist-template" type="text/x-handlebars-template">
     <section class="book-main book-main-section">
       <div>
@@ -21,6 +26,21 @@
       <button id="viewdetails" data-fetchone="{{book_id}}">view details</button>
     </section>
   </script>
+
+  <script id="detail-template" type="text/x-handlebars-template">
+    <h2>{{title}}</h2>
+    <h3>{{author}}</h3>
+    <h4>isbn {{isbn}}</h4>
+    <br />
+    <img src="{{image_url}}" />
+    <p>
+      {{description}}
+      <a id="readmore" href="#"> ...read more</a>
+    </p>
+    <button id="delete">delete</button> <button id="update">update</button>
+    <div class="space"></div>
+  </script>
+
 
   <body>
     <div id="wrapper">
@@ -34,14 +54,13 @@
             <li class="tab" data-content="addbook"><a href="/books/new"> Add A New Book</a></li>
           </ul>
         </nav>
-
       </header>
 
+
+
+
       <div id="book-main" class="main-div clearfix container">
-
         <h2>my books</h2>
-
-
         <!---append Handlebars template to main-->
         <!-- all books go here -->
       </div>
@@ -51,21 +70,6 @@
 
       <div id="detail-main" class="main-div clearfix container">
         <!-- one book goes here -->
-        <h2>book title</h2>
-        <h3>author</h3>
-        <h4>isbn 12345</h4>
-
-        <br />
-        <img src="https://books.google.com/books/content?id=BcG2dVRXKukC&printsec=frontcover&img=1&zoom=5&source=gbs_api" />
-
-        <p>
-          Lorem ipsum dolor sit amet, recusabo suscipiantur te sit, sit eius placerat ei. Sumo aeterno et ius, munere aperiam eum ei. Essent verear veritus cu has. Ius id senserit posidonium definitionem. Nostrud consequuntur in vel, nam no luptatum intellegat. Nonumes posidonium definitionem eu quo, id quo nihil maluisset. Sea ne splendide referrentur. Sea et melius moderatius, pri tota graece aperiam eu. Ei pri dicat utinam libris, virtute perpetua interpretaris sea no. Ei mel graeco disputando, inani eloquentiam et vix.
-
-          <a id="readmore" href="#"> ...read more</a>
-        </p>
-
-        <button id="delete">delete</button> <button id="update">update</button>
-        <div class="space"></div>
       </div>
 
 
@@ -77,15 +81,10 @@
 
         <form id="addBook">
           <input type="text" id="title" name="title" placeholder="title" />
-
           <input type="text" id="author" name="author" placeholder="author" />
-
           <input type="text" id="isbn" name="isbn" placeholder="isbn" />
-
           <input type="text" id="imageurl" name="imageurl" placeholder="image url" />
-
           <textarea rows="3" id="description" name="description" placeholder="description..."></textarea>
-
           <button type="submit" id="submitAddBook">submit</button>
         </form>
       </div>

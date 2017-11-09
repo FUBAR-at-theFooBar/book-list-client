@@ -19,13 +19,12 @@ var app = app || {};
 
   // $('#books').on('click', '.books', function() {
 
-  bookView.initDetailPage = () => {
+  bookView.initDetailPage = (fetchone) => {
     $('.container').hide();
+    $('#detail-main').empty();
     $('#detail-main').show();
-
-
-
-
+    // console.log(fetchone);
+    $('#detail-main').append(app.Book.all[fetchone-1].detailToHtml());
   }
 
   bookView.initFormPage = () => {

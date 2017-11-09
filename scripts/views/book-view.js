@@ -45,16 +45,18 @@ var app = app || {};
     $('.container').hide();
     $('#form-main').show();
 
-    $('#create-form').on('submit', function(event){
+    $('#addBook').on('submit', function(event){
       event.preventDefault();
 
       let book = {
         title: event.target.title.value,
         author: event.target.author.value,
-        image_url: event.target.image_url.value,
+        image_url: event.target.imageurl.value,
         isbn: event.target.isbn.value,
         description: event.target.description.value
       }
+
+      app.Book.create(book);
     })
   }
 

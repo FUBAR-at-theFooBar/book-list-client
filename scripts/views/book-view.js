@@ -41,7 +41,6 @@ var app = app || {};
   };
 
   bookView.initFormPage = () => {
-    console.log('form page show pls');
     $('.container').hide();
     $('#form-main').show();
 

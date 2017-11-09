@@ -7,7 +7,6 @@ var app = app || {};
   bookView.initIndexPage = () => {
     $('.container').hide();
     $('#book-main').show();
-
     app.Book.all.forEach(a => $('#book-main').append(a.toHtml()));
   }
 

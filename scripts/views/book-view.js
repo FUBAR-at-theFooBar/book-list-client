@@ -5,14 +5,13 @@ var app = app || {};
   var bookView = {};
 
   bookView.initIndexPage = () => {
+    $('#book-main section').remove();
     $('.container').hide();
     $('#book-main').show();
-
     app.Book.all.forEach(a => $('#book-main').append(a.toHtml()));
   }
 
   bookView.initDetailPage = () => {
-    console.log('initFormPage');
     $('.container').hide();
     $('#detail-main').show();
     $('#create-form').on('submit', function(event){
@@ -31,6 +30,7 @@ var app = app || {};
   }
 
   bookView.initFormPage = () => {
+    console.log('form page show pls');
     $('.container').hide();
     $('#form-main').show();
   }

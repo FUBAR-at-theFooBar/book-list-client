@@ -12,12 +12,13 @@
   </head>
 
   <script id="booklist-template" type="text/x-handlebars-template">
-    <section class="book-main book-main-section" data-fetchone=""{{book_id}}>
+    <section class="book-main book-main-section" data-fetchone="{{book_id}}">
       <div>
         <img src="{{image_url}}" />
       </div>
       <h3>{{title}}</h3>
       <h4>{{author}}</h4>
+      <button id="viewdetails">view details</button>
     </section>
   </script>
 
@@ -29,8 +30,8 @@
         <nav class="main-nav">
           <div class="icon-menu"></div>
           <ul>
-            <li class="tab" data-content="viewbooks"><a href="#"> View All Books</a></li>
-            <li class="tab" data-content="addbook"><a href="#"> Add A New Book</a></li>
+            <li class="tab" data-content="viewbooks"><a href="/"> View All Books</a></li>
+            <li class="tab" data-content="addbook"><a href="/books/new"> Add A New Book</a></li>
           </ul>
         </nav>
 
@@ -61,6 +62,9 @@
 
           <a id="readmore" href="#"> ...read more</a>
         </p>
+
+        <button id="delete">delete</button> <button id="update">update</button>
+        <div class="space"></div>
       </div>
 
 
@@ -87,6 +91,38 @@
 
 
 
+
+      <div id="update-main" class="main-div clearfix">
+        <!-- books updated here -->
+        <h2>update: book title</h2>
+
+        <form id="updateBook">
+          <input type="text" id="title" name="title" placeholder="current book title" />
+
+          <input type="text" id="author" name="author" placeholder="author name" />
+
+          <input type="text" id="isbn" name="isbn" placeholder="ISBN 12345" />
+
+          <input type="text" id="imageurl" name="imageurl" placeholder="http://imageurl.com/book-cover.png" />
+
+          <textarea rows="3" id="description" name="description" placeholder="lorem ipsum dolor..."></textarea>
+
+          <button type="submit" id="submitUpdateBook">update</button>
+        </form>
+      </div>
+
+
+
+      <div id="admin-main" class="main-div clearfix container">
+        <!-- admin stuff goes here -->
+
+        <form id="admin">
+          <label for="password">please enter your passphrase</label>
+          <input type="text" id="password" name="password" type="password" placeholder="*****" />
+
+          <button type="submit" id="submitAdmin">submit</button>
+        </form>
+      </div>
 
 
 

@@ -1,30 +1,11 @@
 'use strict'
 
-<<<<<<< HEAD
-page('/', ctx => {console.log('page connect /');
-  app.Book.fetchAll(app.bookView.initIndexPage)});
-// page('/books/:book_id', ctx => app.Book.fetchOne(app.bookView.initIndexPage)); //needs to connect to #detail-main;
-page('/books/1', ctx => {console.log('page connect /books/:book_id');
-  app.Book.fetchAll(app.bookView.initIndexPage)}); //needs to connect to #detail-main;
-
-page('/books/new', ctx => app.Book.fetchAll(app.bookView.initIndexPage))//needs to connect to #form-main;
-
-// page('/', app.bookView.initIndexPage);
-
-
-// page('/', ctx => app.Task.fetchAll(app.taskView.initIndexPage));
-// page('/tasks/add', ctx => app.taskView.initAddForm(ctx));
-=======
 page('/', ctx => app.Book.fetchAll(app.bookView.initIndexPage));
 page('/books/new', ctx => app.bookView.initFormPage(ctx));//needs to connect to #form-main;
 page('/books/:book_id', ctx => app.Book.fetchOne(ctx, app.bookView.initDetailPage)); //needs to connect to #detail-main;
->>>>>>> f37f32c93d2a629804fc0cfecf76acc6b6524afd
 page();
-//
 
 
-<<<<<<< HEAD
-=======
 //adding click functions here
 $('book-main').click(()=>{
   app.Book.fetchOne(app.bookView.initDetailPage)
@@ -45,47 +26,3 @@ $('#Book4').click(()=>{
 $('#Book5').click(()=>{
   app.Book.fetchOne(app.bookView.initDetailPage)
 })
->>>>>>> f37f32c93d2a629804fc0cfecf76acc6b6524afd
-
-//
-// //in server.js add body parser
-//
-// app.post('/tasks/add', bodyParser, (req,res) => { //in server, listens for /tasks/add, querys db to insert them in, returns a status showing complete
-//   let{title, description, category, contact, status} = req.body;//sets up function using express to set title = req.body.title later in the code
-//
-//   client.query(`
-//     INSERT INTO tasks(title, description, category, contact, status)
-//     VALUES($1, $2, $3, $4, $5)`,
-//     [title, description, category, contact, status]
-//   )
-//     .then(results => res.sendStatus(201))
-//     .catch(console.error);
-// });
-//
-// //in task.js
-// task.createTask = task => {//takes task from initAddForm
-// //make ajax to redirect
-//   $.post(`${__API_URL__}/tasks/add`, task)
-//     .then(() => page('/'))//redirect back to homepage after adding to db
-//     .catch(errorCallback);
-//   module.task = task;
-// }
-//
-// //in task-view.js
-// function reset() {
-//   $('.container').hide();
-//   // show something
-// }
-//
-// taskView.initAddForm = function(){//on submit in the form-- then sends the object to ccreateTask
-//   let task ={
-//     title:  event.target.title.value,
-//     desctiprion:  event.target.desctiprion.value,
-//     category:  event.target.category.value,
-//     contact:  event.target.contact.value,
-//     status:  event.target.status.value,
-//
-//   };
-//
-//   module.Task.createTask(task);
-// }

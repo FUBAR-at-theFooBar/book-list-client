@@ -63,8 +63,9 @@ var __API_URL__ = 'https://ncjh-booklist.herokuapp.com';
   }
 
   Book.create = book => {
+    console.log(book);
     $.post(`${__API_URL__}/api/v1/books`, book)
-      .then(() => page('/'))
+      .then(() => {console.log('posted'); page('/')})
       .catch(errorCallback);
   }
 

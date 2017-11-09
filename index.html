@@ -12,7 +12,7 @@
   </head>
 
   <script id="booklist-template" type="text/x-handlebars-template">
-    <section class="book-main book-main-section" data-fetchone=""{{book_id}}>
+    <section class="book-main book-main-section" data-fetchone="{{book_id}}">
       <div>
         <img src="{{image_url}}" />
       </div>
@@ -29,14 +29,15 @@
         <nav class="main-nav">
           <div class="icon-menu"></div>
           <ul>
-            <li class="tab" data-content="viewbooks"><a href="#"> View All Books</a></li>
-            <li class="tab" data-content="addbook"><a href="#"> Add A New Book</a></li>
+            <li class="tab" data-content="viewbooks"><a href="/"> View All Books</a></li>
+            <li class="tab" data-content="addbook"><a href="/books/new"> Add A New Book</a></li>
           </ul>
         </nav>
 
       </header>
 
       <div id="book-main" class="main-div clearfix container">
+
         <h2>my books</h2>
 
 

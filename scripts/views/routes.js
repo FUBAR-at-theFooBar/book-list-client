@@ -7,23 +7,23 @@ page();
 
 
 //adding click functions here
-$('book-main').click(()=>{
-  app.Book.fetchOne(app.bookView.initDetailPage)
-})
-
-$('#Book1').click(()=>{
-  app.Book.fetchOne(app.bookView.initDetailPage)
-})
-$('#Book2').click(()=>{
-  app.Book.fetchOne(app.bookView.initDetailPage)
-})
-$('#Book3').click(()=>{
-  app.Book.fetchOne(app.bookView.initDetailPage)
-})
-$('#Book4').click(()=>{
-  app.Book.fetchOne(app.bookView.initDetailPage)
-})
-$('#Book5').click(()=>{
-  app.Book.fetchOne(app.bookView.initDetailPage)
-})
+// $('book-main').click(()=>{
+//   app.Book.fetchOne(app.bookView.initDetailPage)
+// })
+// 
+// $('#Book1').click(()=>{
+//   app.Book.fetchOne(app.bookView.initDetailPage)
+// })
+// $('#Book2').click(()=>{
+//   app.Book.fetchOne(app.bookView.initDetailPage)
+// })
+// $('#Book3').click(()=>{
+//   app.Book.fetchOne(app.bookView.initDetailPage)
+// })
+// $('#Book4').click(()=>{
+//   app.Book.fetchOne(app.bookView.initDetailPage)
+// })
+// $('#Book5').click(()=>{
+//   app.Book.fetchOne(app.bookView.initDetailPage)
+// })
 

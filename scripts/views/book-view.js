@@ -40,6 +40,27 @@ var app = app || {};
     });
   };
 
+  bookView.initUpdatePage = () => {
+    $('.container').hide();
+    $('#update-main').show();
+    $('#updateBook').off('submit');
+    $('#updateBook').on('submit', function(event){
+      event.preventDefault();
+
+      let book = {
+        title: event.target.title.value,
+        author: event.target.author.value,
+        image_url: event.target.image_url.value,
+        isbn: event.target.isbn.value,
+        description: event.target.description.value
+      }
+
+      app.Book.update(book);
+    });
+  }
+
+
+
   bookView.initFormPage = () => {
     $('.container').hide();
     $('#form-main').show();

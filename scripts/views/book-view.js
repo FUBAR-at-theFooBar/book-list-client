@@ -57,10 +57,21 @@ var app = app || {};
   bookView.initUpdatePage = (fetchone, fetchIndex) => {
     $('.container').hide();
 
+    $('#update-main h2').text('Update: ' + app.Book.all[fetchIndex].title);
+
+    $('#updateBook #title').val(app.Book.all[fetchIndex].title);
     $('#updateBook #title').attr('placeholder', app.Book.all[fetchIndex].title);
+
+    $('#updateBook #author').val(app.Book.all[fetchIndex].author);
     $('#updateBook #author').attr('placeholder', app.Book.all[fetchIndex].author);
+
+    $('#updateBook #isbn').val(app.Book.all[fetchIndex].isbn);
     $('#updateBook #isbn').attr('placeholder', app.Book.all[fetchIndex].isbn);
+
+    $('#updateBook #image_url').val(app.Book.all[fetchIndex].image_url);
     $('#updateBook #image_url').attr('placeholder', app.Book.all[fetchIndex].image_url);
+
+    $('#updateBook #description').val(app.Book.all[fetchIndex].description);
     $('#updateBook #description').attr('placeholder', app.Book.all[fetchIndex].description);
 
     $('#update-main').show();

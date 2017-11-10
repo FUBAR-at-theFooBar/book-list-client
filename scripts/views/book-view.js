@@ -10,7 +10,6 @@ var app = app || {};
     $('#book-main').show();
     app.Book.all.forEach(a => $('#book-main').append(a.toHtml()));
     $('.book-main').on('click', '#viewdetails',function() {
-      console.log($(this).data('fetchone'));
       bookView.initDetailPage($(this).data('fetchone'));
     });
   }
@@ -56,7 +55,6 @@ var app = app || {};
     $('#updateBook').off('submit');
     $('#updateBook').on('submit', function(event){
       event.preventDefault();
-      console.log(fetchone);
       let book = {
         book_id: fetchone,
         title: event.target.title.value,
@@ -65,7 +63,6 @@ var app = app || {};
         isbn: event.target.isbn.value,
         description: event.target.description.value
       }
-
       app.Book.update(book);
     });
   }

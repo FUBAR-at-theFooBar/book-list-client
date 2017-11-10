@@ -60,11 +60,34 @@ var __API_URL__ = 'https://ncjh-booklist.herokuapp.com';
       .catch (errorCallback);
   }
 
-  Book.update = (ctx, book) => {
-    $.put(`${__API_URL__}/api/v1/books/update/${ctx.params.book_id}`, book)
+  Book.update = (book) => {
+    console.log(book.book_id);
+    $.ajax({
+      url: `${__API_URL__}/api/v1/books/${book.book_id}/update`,
+      method: 'PUT',
+      data: book
+    })
       .then(() => {console.log('updated'); page('/')})
       .catch(errorCallback);
   }
+
+  // Article.prototype.updateRecord = function(callback) {
+  //   $.ajax({
+  //     url: `/articles/${this.article_id}`,
+  //     method: 'PUT',
+  //     data: {
+  //       author: this.author,
+  //       authorUrl: this.authorUrl,
+  //       body: this.body,
+  //       category: this.category,
+  //       publishedOn: this.publishedOn,
+  //       title: this.title,
+  //       author_id: this.author_id
+  //     }
+  //   })
+  //     .then(console.log)
+  //     .then(callback);
+  // };
 
   Book.create = book => {
     $.post(`${__API_URL__}/api/v1/books`, book)

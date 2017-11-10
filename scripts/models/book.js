@@ -1,15 +1,15 @@
 'use strict';
 
 var app = app || {};
-var __API_URL__ = 'https://ncjh-booklist.herokuapp.com';
-// var __API_URL__ = 'https://localhost:3000'
+// var __API_URL__ = 'https://ncjh-booklist.herokuapp.com';
+var __API_URL__ = 'http://localhost:3000';
 
 (function(module){
 
 
   function errorCallback(err) {
     console.error(err);
-    module.errorView.initErrorPage(err);
+    // module.errorView.initErrorPage(err);
   }
 
   // Declaring a Constructor function that assigns properties of Book objects
@@ -44,9 +44,10 @@ var __API_URL__ = 'https://ncjh-booklist.herokuapp.com';
   Book.fetchAll = callback => {
     $.get(`${__API_URL__}/api/v1/books`)
       .then (results => {
+        console.log('fetchall');
         Book.loadAll(results);
-        callback();
       })
+      .then (callback)
       .catch (errorCallback);
   }
 

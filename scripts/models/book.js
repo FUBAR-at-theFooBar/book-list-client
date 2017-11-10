@@ -1,8 +1,8 @@
 'use strict';
 
 var app = app || {};
-// var __API_URL__ = 'https://ncjh-booklist.herokuapp.com';
-var __API_URL__ = 'http://localhost:3000';
+var __API_URL__ = 'https://ncjh-booklist.herokuapp.com';
+// var __API_URL__ = 'http://localhost:3000';
 
 (function(module){
 
@@ -63,12 +63,14 @@ var __API_URL__ = 'http://localhost:3000';
       .catch (errorCallback);
   }
 
+
   Book.create = book => {
     console.log(book);
     $.post(`${__API_URL__}/api/v1/books`, book)
       .then(() => {console.log('posted'); page('/')})
       .catch(errorCallback);
   }
+
 
   module.Book = Book;
 })(app);

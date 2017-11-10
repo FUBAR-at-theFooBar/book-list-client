@@ -112,8 +112,6 @@ var app = app || {};
     })
   };
 
-
-
   module.bookView = bookView;
 })(app);
 

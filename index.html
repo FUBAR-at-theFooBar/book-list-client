@@ -13,7 +13,8 @@
 
   <script id="error-template" type="text/x-handlebars-template">
     <h3>Oops, something went wrong!</h3>
-    <p>{{status}}: {{statusText}}</p>
+    <p>{{error}}.</p>
+    <div class="space"></div>
   </script>
 
   <script id="booklist-template" type="text/x-handlebars-template">
@@ -66,6 +67,12 @@
       </div>
 
 
+      <div id="error-main" class="main-div clearfix container">
+        <h2>ERROR!</h2>
+        <div id="error-message">
+          <!---error message goes here-->
+        </div>
+      </div>
 
 
       <div id="detail-main" class="main-div clearfix container">

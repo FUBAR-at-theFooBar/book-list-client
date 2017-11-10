@@ -3,13 +3,11 @@
 var app = app || {};
 var __API_URL__ = 'https://ncjh-booklist.herokuapp.com';
 // var __API_URL__ = 'http://localhost:3000';
-
 (function(module){
-
 
   function errorCallback(err) {
     console.error(err);
-    // module.errorView.initErrorPage(err);
+    app.errorView.initErrorPage(err);
   }
 
   // Declaring a Constructor function that assigns properties of Book objects

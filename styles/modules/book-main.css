@@ -17,12 +17,16 @@
 
 #book-main div {
   height: 16em;
+  text-align: center;
   overflow: hidden;
+  padding-top: 1em;
 }
 
 #book-main img {
-  width: 100%;
-  object-fit: cover;
+  height: 100%;
+  width: auto;
+  box-shadow: 2px 2px 2px #8c2440;
+  /*object-fit: cover;*/
 }
 
 #book-main h3 {

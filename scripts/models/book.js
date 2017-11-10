@@ -5,6 +5,8 @@ var __API_URL__ = 'https://ncjh-booklist.herokuapp.com';
 // var __API_URL__ = 'http://localhost:3000';
 (function(module){
 
+  Book.TOKEN = '666';
+
   function errorCallback(err) {
     console.error(err);
     app.errorView.initErrorPage(err);
@@ -61,16 +63,19 @@ var __API_URL__ = 'https://ncjh-booklist.herokuapp.com';
   }
 
   Book.update = (book) => {
-    console.log(book.book_id);
-    $.ajax({
-      url: `${__API_URL__}/api/v1/books/${book.book_id}/update`,
-      method: 'PUT',
-      data: book
-    })
-      .then(() => {console.log('updated'); page('/')})
-      .catch(errorCallback);
-  }
+    if(Book.login !== TOKEN){
 
+
+    }else{
+      $.ajax({
+        url: `${__API_URL__}/api/v1/books/${book.book_id}/update`,
+        method: 'PUT',
+        data: book
+      })
+        .then(() => {console.log('updated'); page('/')})
+        .catch(errorCallback);
+    }
+  };
   Book.delete = (fetchone) => {
     $.ajax({
       url: `${__API_URL__}/api/v1/books/${fetchone}/delete`,

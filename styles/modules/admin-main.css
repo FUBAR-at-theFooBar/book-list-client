@@ -2,6 +2,10 @@
   padding: 0 2em 2em 2em;
 }
 
+#admin-main h2 {
+  margin: 2.5em 0 1em 0;
+}
+
 #admin-main input {
   width: 100%;
   font-size: 1.7em;
@@ -37,4 +41,10 @@
 
 #admin-main label {
   font-size: 1.2em;
+}
+
+#incorrectPwd {
+  color: red;
+  text-align: center;
+  margin-bottom: 0.5em;
 }

@@ -9,7 +9,7 @@ var app = app || {};
     $('.container').hide();
     $('#book-main').show();
     app.Book.all.forEach(a => $('#book-main').append(a.toHtml()));
-    $('.book-main').on('click', '#viewdetails',function(){
+    $('.book-main').on('click', '#viewdetails',function() {
       bookView.initDetailPage($(this).data('fetchone'));
     });
   }
@@ -19,8 +19,22 @@ var app = app || {};
     $('#detail-main').empty();
     $('#detail-main').show();
     // console.log(fetchone);
-    $('#detail-main').append(app.Book.all[fetchone-1].detailToHtml());
+    let fetchIndex;
+    app.Book.all.forEach((el, i)=> {
+      if (fetchone === el.book_id){
+        fetchIndex = i;
+      }
+    })
+    $('#detail-main').append(app.Book.all[fetchIndex].detailToHtml());
     bookView.setTeasers();
+    $('#update').on('click', function() {
+      if(app.Book.login === app.Book.TOKEN) bookView.initUpdatePage(fetchone, fetchIndex);
+      else bookView.initAdminPage(fetchone);
+    });
+    $('#delete').on('click', function() {
+      if(app.Book.login === app.Book.TOKEN) app.Book.delete(fetchone);
+      else bookView.initAdminPage(fetchone);
+    });
   }
 
   bookView.setTeasers = () => {
@@ -40,10 +54,34 @@ var app = app || {};
     });
   };
 
+  bookView.initUpdatePage = (fetchone, fetchIndex) => {
+    $('.container').hide();
+
+    $('#updateBook #title').attr('placeholder', app.Book.all[fetchIndex].title);
+    $('#updateBook #author').attr('placeholder', app.Book.all[fetchIndex].author);
+    $('#updateBook #isbn').attr('placeholder', app.Book.all[fetchIndex].isbn);
+    $('#updateBook #image_url').attr('placeholder', app.Book.all[fetchIndex].image_url);
+    $('#updateBook #description').attr('placeholder', app.Book.all[fetchIndex].description);
+
+    $('#update-main').show();
+    $('#updateBook').off('submit');
+    $('#updateBook').on('submit', function(event){
+      event.preventDefault();
+      let book = {
+        book_id: fetchone,
+        title: event.target.title.value,
+        author: event.target.author.value,
+        image_url: event.target.image_url.value,
+        isbn: event.target.isbn.value,
+        description: event.target.description.value
+      }
+      app.Book.update(book);
+    });
+  }
+
   bookView.initFormPage = () => {
     $('.container').hide();
     $('#form-main').show();
-
     $('#addBook').off('submit');
     $('#addBook').on('submit', function(event){
       event.preventDefault();
@@ -60,10 +98,23 @@ var app = app || {};
     });
   }
 
+  bookView.initAdminPage = (fetchone) => {
+    $('.container').hide();
+    $('#admin-main').show();
+    $('#admin').off('submit');
+    $('#admin').on('submit', function(event){
+      event.preventDefault();
+      if(event.target.password.value !== app.Book.TOKEN) $('#incorrectPwd').text('incorrect password');
+      else {
+        app.Book.login = event.target.password.value;
+        bookView.initDetailPage(fetchone);
+      }
+    })
+  };
 
 
 
   module.bookView = bookView;
 })(app);
 
-// $(app.Book.fetchAll(app.bookView.initIndexPage));
+$(app.Book.fetchAll(app.bookView.initIndexPage));

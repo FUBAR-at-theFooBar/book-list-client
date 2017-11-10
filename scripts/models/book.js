@@ -3,13 +3,13 @@
 var app = app || {};
 var __API_URL__ = 'https://ncjh-booklist.herokuapp.com';
 // var __API_URL__ = 'http://localhost:3000';
-
 (function(module){
 
+  Book.TOKEN = '666';
 
   function errorCallback(err) {
     console.error(err);
-    // module.errorView.initErrorPage(err);
+    app.errorView.initErrorPage(err);
   }
 
   // Declaring a Constructor function that assigns properties of Book objects
@@ -44,7 +44,6 @@ var __API_URL__ = 'https://ncjh-booklist.herokuapp.com';
   Book.fetchAll = callback => {
     $.get(`${__API_URL__}/api/v1/books`)
       .then (results => {
-        console.log('fetchall');
         Book.loadAll(results);
       })
       .then (callback)
@@ -63,9 +62,47 @@ var __API_URL__ = 'https://ncjh-booklist.herokuapp.com';
       .catch (errorCallback);
   }
 
+  Book.update = (book) => {
+    if(Book.login !== TOKEN){
+
+
+    }else{
+      $.ajax({
+        url: `${__API_URL__}/api/v1/books/${book.book_id}/update`,
+        method: 'PUT',
+        data: book
+      })
+        .then(() => {console.log('updated'); page('/')})
+        .catch(errorCallback);
+    }
+  };
+  Book.delete = (fetchone) => {
+    $.ajax({
+      url: `${__API_URL__}/api/v1/books/${fetchone}/delete`,
+      method: 'DELETE'
+    })
+      .then(() => {console.log('deleted'); page('/')})
+      .catch(errorCallback);
+  }
+  // Article.prototype.updateRecord = function(callback) {
+  //   $.ajax({
+  //     url: `/articles/${this.article_id}`,
+  //     method: 'PUT',
+  //     data: {
+  //       author: this.author,
+  //       authorUrl: this.authorUrl,
+  //       body: this.body,
+  //       category: this.category,
+  //       publishedOn: this.publishedOn,
+  //       title: this.title,
+  //       author_id: this.author_id
+  //     }
+  //   })
+  //     .then(console.log)
+  //     .then(callback);
+  // };
 
   Book.create = book => {
-    console.log(book);
     $.post(`${__API_URL__}/api/v1/books`, book)
       .then(() => {console.log('posted'); page('/')})
       .catch(errorCallback);

@@ -13,7 +13,8 @@
 
   <script id="error-template" type="text/x-handlebars-template">
     <h3>Oops, something went wrong!</h3>
-    <p>{{status}}: {{statusText}}</p>
+    <p>{{error}}.</p>
+    <div class="space"></div>
   </script>
 
   <script id="booklist-template" type="text/x-handlebars-template">
@@ -31,8 +32,9 @@
     <h2>{{title}}</h2>
     <h3>{{author}}</h3>
     <h4>isbn {{isbn}}</h4>
-    <br />
-    <img src="{{image_url}}" />
+    <div id="detailimg">
+      <img src="{{image_url}}" />
+    </div>
     <p>
       {{description}}
     </p>
@@ -66,6 +68,12 @@
       </div>
 
 
+      <div id="error-main" class="main-div clearfix container">
+        <h2>ERROR!</h2>
+        <div id="error-message">
+          <!---error message goes here-->
+        </div>
+      </div>
 
 
       <div id="detail-main" class="main-div clearfix container">
@@ -103,7 +111,7 @@
 
           <input type="text" id="isbn" name="isbn" placeholder="ISBN 12345" />
 
-          <input type="text" id="imageurl" name="imageurl" placeholder="http://imageurl.com/book-cover.png" />
+          <input type="text" id="image_url" name="image_url" placeholder="http://imageurl.com/book-cover.png" />
 
           <textarea rows="3" id="description" name="description" placeholder="lorem ipsum dolor..."></textarea>
 
@@ -115,10 +123,12 @@
 
       <div id="admin-main" class="main-div clearfix container">
         <!-- admin stuff goes here -->
-
+        <h2>log in</h2>
         <form id="admin">
           <label for="password">please enter your passphrase</label>
-          <input type="text" id="password" name="password" type="password" placeholder="*****" />
+          <input id="password" name="password" type="password" placeholder="*****" />
+
+          <div id="incorrectPwd"></div>
 
           <button type="submit" id="submitAdmin">submit</button>
         </form>

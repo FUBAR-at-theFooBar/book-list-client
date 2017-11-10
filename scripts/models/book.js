@@ -2,13 +2,12 @@
 
 var app = app || {};
 var __API_URL__ = 'https://ncjh-booklist.herokuapp.com';
-
+// var __API_URL__ = 'http://localhost:3000';
 (function(module){
-
 
   function errorCallback(err) {
     console.error(err);
-    module.errorView.initErrorPage(err);
+    app.errorView.initErrorPage(err);
   }
 
   // Declaring a Constructor function that assigns properties of Book objects
@@ -22,6 +21,11 @@ var __API_URL__ = 'https://ncjh-booklist.herokuapp.com';
   // Renders all of the Book objects to HTML using the Handlebars template in index.html
   Book.prototype.toHtml = function() {
     var template = Handlebars.compile($('#booklist-template').text());
+    return template(this);
+  }
+
+  Book.prototype.detailToHtml = function() {
+    var template = Handlebars.compile($('#detail-template').text());
     return template(this);
   }
 
@@ -39,32 +43,66 @@ var __API_URL__ = 'https://ncjh-booklist.herokuapp.com';
     $.get(`${__API_URL__}/api/v1/books`)
       .then (results => {
         Book.loadAll(results);
-        callback();
       })
+      .then (callback)
       .catch (errorCallback);
   }
 
-  Book.fetchOne = callback => {
-    $.get(`${__API_URL__}/api/v1/books/${this.book_id}`)
+  Book.fetchOne = (ctx, callback) => {
+    $.get(`${__API_URL__}/api/v1/books/${ctx.params.book_id}`)
     // $.get(`${__API_URL__}/api/v1/books/1`)
 
       .then (results => {
-        console.log(results);
-        Book.loadAll(results);
+        ctx.book = results[0];
+        // Book.loadAll(results);//JB DOES NOT HAVE THIS IN HIS  FETCHONE
         callback();
       })
       .catch (errorCallback);
   }
 
-  Book.create = callback => {
-    $.post(`${__API_URL__}/api/v1/books`, {
-      title: this.title,
-      author: this.author,
-      image_url: this.image_url,
-      isbn: this.isbn,
-      description: this.description})
-      .then(callback);
+  Book.update = (book) => {
+    console.log(book.book_id);
+    $.ajax({
+      url: `${__API_URL__}/api/v1/books/${book.book_id}/update`,
+      method: 'PUT',
+      data: book
+    })
+      .then(() => {console.log('updated'); page('/')})
+      .catch(errorCallback);
   }
+
+  Book.delete = (fetchone) => {
+    $.ajax({
+      url: `${__API_URL__}/api/v1/books/${fetchone}/delete`,
+      method: 'DELETE'
+    })
+      .then(() => {console.log('deleted'); page('/')})
+      .catch(errorCallback);
+  }
+  // Article.prototype.updateRecord = function(callback) {
+  //   $.ajax({
+  //     url: `/articles/${this.article_id}`,
+  //     method: 'PUT',
+  //     data: {
+  //       author: this.author,
+  //       authorUrl: this.authorUrl,
+  //       body: this.body,
+  //       category: this.category,
+  //       publishedOn: this.publishedOn,
+  //       title: this.title,
+  //       author_id: this.author_id
+  //     }
+  //   })
+  //     .then(console.log)
+  //     .then(callback);
+  // };
+
+  Book.create = book => {
+    $.post(`${__API_URL__}/api/v1/books`, book)
+      .then(() => {console.log('posted'); page('/')})
+      .catch(errorCallback);
+  }
+
 
   module.Book = Book;
 })(app);

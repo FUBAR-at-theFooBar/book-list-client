@@ -11,15 +11,37 @@
     <link rel="stylesheet" href="styles/modules.css">
   </head>
 
+  <script id="error-template" type="text/x-handlebars-template">
+    <h3>Oops, something went wrong!</h3>
+    <p>{{error}}.</p>
+    <div class="space"></div>
+  </script>
+
   <script id="booklist-template" type="text/x-handlebars-template">
-    <section class="book-main book-main-section" data-fetchone=""{{book_id}}>
+    <section class="book-main book-main-section">
       <div>
         <img src="{{image_url}}" />
       </div>
       <h3>{{title}}</h3>
       <h4>{{author}}</h4>
+      <button id="viewdetails" data-fetchone="{{book_id}}">view details</button>
     </section>
   </script>
+
+  <script id="detail-template" type="text/x-handlebars-template">
+    <h2>{{title}}</h2>
+    <h3>{{author}}</h3>
+    <h4>isbn {{isbn}}</h4>
+    <br />
+    <img src="{{image_url}}" />
+    <p>
+      {{description}}
+    </p>
+    <div class="clearfix"><span id="readmore"> ...read more</span></div>
+    <button id="delete">delete</button> <button id="update">update</button>
+    <div class="space"></div>
+  </script>
+
 
   <body>
     <div id="wrapper">
@@ -29,43 +51,32 @@
         <nav class="main-nav">
           <div class="icon-menu"></div>
           <ul>
-            <li class="tab" data-content="viewbooks"><a href="#"> View All Books</a></li>
-            <li class="tab" data-content="addbook"><a href="#"> Add A New Book</a></li>
+            <li class="tab" data-content="viewbooks"><a href="/"> View All Books</a></li>
+            <li class="tab" data-content="addbook"><a href="/books/new"> Add A New Book</a></li>
           </ul>
         </nav>
-
       </header>
 
+
+
+
       <div id="book-main" class="main-div clearfix container">
-        <button id="Book1">Book 1</button>
-        <button id="Book2">Book 2</button>
-        <button id="Book3">Book 3</button>
-        <button id="Book4">Book 4</button>
-        <button id="Book5">Book 5</button>
         <h2>my books</h2>
-
-
         <!---append Handlebars template to main-->
         <!-- all books go here -->
       </div>
 
 
+      <div id="error-main" class="main-div clearfix container">
+        <h2>ERROR!</h2>
+        <div id="error-message">
+          <!---error message goes here-->
+        </div>
+      </div>
 
 
       <div id="detail-main" class="main-div clearfix container">
         <!-- one book goes here -->
-        <h2>book title</h2>
-        <h3>author</h3>
-        <h4>isbn 12345</h4>
-
-        <br />
-        <img src="https://books.google.com/books/content?id=BcG2dVRXKukC&printsec=frontcover&img=1&zoom=5&source=gbs_api" />
-
-        <p>
-          Lorem ipsum dolor sit amet, recusabo suscipiantur te sit, sit eius placerat ei. Sumo aeterno et ius, munere aperiam eum ei. Essent verear veritus cu has. Ius id senserit posidonium definitionem. Nostrud consequuntur in vel, nam no luptatum intellegat. Nonumes posidonium definitionem eu quo, id quo nihil maluisset. Sea ne splendide referrentur. Sea et melius moderatius, pri tota graece aperiam eu. Ei pri dicat utinam libris, virtute perpetua interpretaris sea no. Ei mel graeco disputando, inani eloquentiam et vix.
-
-          <a id="readmore" href="#"> ...read more</a></span>
-        </p>
       </div>
 
 
@@ -77,21 +88,48 @@
 
         <form id="addBook">
           <input type="text" id="title" name="title" placeholder="title" />
-
           <input type="text" id="author" name="author" placeholder="author" />
-
           <input type="text" id="isbn" name="isbn" placeholder="isbn" />
-
-          <input type="text" id="imageurl" name="imageurl" placeholder="image url" />
-
+          <input type="text" id="image_url" name="image_url" placeholder="image url" />
           <textarea rows="3" id="description" name="description" placeholder="description..."></textarea>
-
           <button type="submit" id="submitAddBook">submit</button>
         </form>
       </div>
 
 
 
+
+      <div id="update-main" class="main-div clearfix container">
+        <!-- books updated here -->
+        <h2>update: book title</h2>
+
+        <form id="updateBook">
+          <input type="text" id="title" name="title" placeholder="current book title" />
+
+          <input type="text" id="author" name="author" placeholder="author name" />
+
+          <input type="text" id="isbn" name="isbn" placeholder="ISBN 12345" />
+
+          <input type="text" id="image_url" name="image_url" placeholder="http://imageurl.com/book-cover.png" />
+
+          <textarea rows="3" id="description" name="description" placeholder="lorem ipsum dolor..."></textarea>
+
+          <button type="submit" id="submitUpdateBook">update</button>
+        </form>
+      </div>
+
+
+
+      <div id="admin-main" class="main-div clearfix container">
+        <!-- admin stuff goes here -->
+
+        <form id="admin">
+          <label for="password">please enter your passphrase</label>
+          <input type="text" id="password" name="password" type="password" placeholder="*****" />
+
+          <button type="submit" id="submitAdmin">submit</button>
+        </form>
+      </div>
 
 
 

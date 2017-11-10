@@ -1,0 +1,40 @@
+#admin-main {
+  padding: 0 2em 2em 2em;
+}
+
+#admin-main input {
+  width: 100%;
+  font-size: 1.7em;
+  padding: 0.5em;
+  border: 1px solid;
+  border-radius: 4px;
+  outline: 0;
+  margin: 1em 0;
+}
+
+#admin-main input::placeholder {
+  color: #bbb;
+  font-weight: 200;
+  letter-spacing: 0.1em;
+}
+
+#admin-main button {
+  margin: 0.5em 0 5em 0;
+  padding: 1em 3.5em;
+  background: #444;
+  color: #fff;
+  font-size: 1.1em;
+  font-weight: 500;
+  border: solid 1px #444;
+  border-radius: 3px;
+  float: right;
+  outline: 0;
+}
+
+#admin-main button:hover {
+  background: #666;
+}
+
+#admin-main label {
+  font-size: 1.2em;
+}

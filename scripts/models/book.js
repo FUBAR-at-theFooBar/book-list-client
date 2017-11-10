@@ -44,7 +44,6 @@ var __API_URL__ = 'http://localhost:3000';
   Book.fetchAll = callback => {
     $.get(`${__API_URL__}/api/v1/books`)
       .then (results => {
-        console.log('fetchall');
         Book.loadAll(results);
       })
       .then (callback)
@@ -64,7 +63,6 @@ var __API_URL__ = 'http://localhost:3000';
   }
 
   Book.create = book => {
-    console.log(book);
     $.post(`${__API_URL__}/api/v1/books`, book)
       .then(() => {console.log('posted'); page('/')})
       .catch(errorCallback);

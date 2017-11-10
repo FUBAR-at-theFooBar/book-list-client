@@ -9,7 +9,8 @@ var app = app || {};
     $('.container').hide();
     $('#book-main').show();
     app.Book.all.forEach(a => $('#book-main').append(a.toHtml()));
-    $('.book-main').on('click', '#viewdetails',function(){
+    $('.book-main').on('click', '#viewdetails',function() {
+      console.log($(this).data('fetchone'));
       bookView.initDetailPage($(this).data('fetchone'));
     });
   }
@@ -19,8 +20,17 @@ var app = app || {};
     $('#detail-main').empty();
     $('#detail-main').show();
     // console.log(fetchone);
-    $('#detail-main').append(app.Book.all[fetchone-1].detailToHtml());
+    let fetchIndex;
+    app.Book.all.forEach((el, i)=> {
+      if (fetchone === el.book_id){
+        fetchIndex = i;
+      }
+    })
+    $('#detail-main').append(app.Book.all[fetchIndex].detailToHtml());
     bookView.setTeasers();
+    $('#update').on('click', function() {
+      bookView.initUpdatePage(fetchone);
+    });
   }
 
   bookView.setTeasers = () => {
@@ -40,14 +50,15 @@ var app = app || {};
     });
   };
 
-  bookView.initUpdatePage = () => {
+  bookView.initUpdatePage = (fetchone) => {
     $('.container').hide();
     $('#update-main').show();
     $('#updateBook').off('submit');
     $('#updateBook').on('submit', function(event){
       event.preventDefault();
-
+      console.log(fetchone);
       let book = {
+        book_id: fetchone,
         title: event.target.title.value,
         author: event.target.author.value,
         image_url: event.target.image_url.value,

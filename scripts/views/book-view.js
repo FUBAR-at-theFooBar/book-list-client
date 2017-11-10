@@ -28,7 +28,7 @@ var app = app || {};
     $('#detail-main').append(app.Book.all[fetchIndex].detailToHtml());
     bookView.setTeasers();
     $('#update').on('click', function() {
-      bookView.initUpdatePage(fetchone);
+      bookView.initUpdatePage(fetchone, fetchIndex);
     });
     $('#delete').on('click', function() {
       app.Book.delete(fetchone);
@@ -53,8 +53,15 @@ var app = app || {};
     });
   };
 
-  bookView.initUpdatePage = (fetchone) => {
+  bookView.initUpdatePage = (fetchone, fetchIndex) => {
     $('.container').hide();
+
+    $('#updateBook #title').attr('placeholder', app.Book.all[fetchIndex].title);
+    $('#updateBook #author').attr('placeholder', app.Book.all[fetchIndex].author);
+    $('#updateBook #isbn').attr('placeholder', app.Book.all[fetchIndex].isbn);
+    $('#updateBook #image_url').attr('placeholder', app.Book.all[fetchIndex].image_url);
+    $('#updateBook #description').attr('placeholder', app.Book.all[fetchIndex].description);
+
     $('#update-main').show();
     $('#updateBook').off('submit');
     $('#updateBook').on('submit', function(event){

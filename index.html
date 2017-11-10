@@ -121,12 +121,14 @@
 
 
 
-      <div id="admin-main" class="main-div clearfix container">
+      <div id="admin-main" class="main-div clearfix">
         <!-- admin stuff goes here -->
 
         <form id="admin">
           <label for="password">please enter your passphrase</label>
-          <input type="text" id="password" name="password" type="password" placeholder="*****" />
+          <input id="password" name="password" type="password" placeholder="*****" />
+
+          <div id="incorrectPwd"></div>
 
           <button type="submit" id="submitAdmin">submit</button>
         </form>

@@ -43,19 +43,8 @@ var app = app || {};
   bookView.initFormPage = () => {
     $('.container').hide();
     $('#form-main').show();
-    $('#addBook').off('submit', function(event){
-      event.preventDefault();
 
-      let book = {
-        title: event.target.title.value,
-        author: event.target.author.value,
-        image_url: event.target.image_url.value,
-        isbn: event.target.isbn.value,
-        description: event.target.description.value
-      }
-
-      app.Book.create(book);
-    });
+    $('#addBook').off('submit');
     $('#addBook').on('submit', function(event){
       event.preventDefault();
 
@@ -77,4 +66,4 @@ var app = app || {};
   module.bookView = bookView;
 })(app);
 
-$(app.Book.fetchAll(app.bookView.initIndexPage))
+// $(app.Book.fetchAll(app.bookView.initIndexPage));

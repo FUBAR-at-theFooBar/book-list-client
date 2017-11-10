@@ -30,6 +30,10 @@ var app = app || {};
     $('#update').on('click', function() {
       bookView.initUpdatePage(fetchone);
     });
+    $('#delete').on('click', function() {
+      app.Book.delete(fetchone);
+    });
+
   }
 
   bookView.setTeasers = () => {

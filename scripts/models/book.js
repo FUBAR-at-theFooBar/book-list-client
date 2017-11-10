@@ -71,6 +71,14 @@ var __API_URL__ = 'https://ncjh-booklist.herokuapp.com';
       .catch(errorCallback);
   }
 
+  Book.delete = (fetchone) => {
+    $.ajax({
+      url: `${__API_URL__}/api/v1/books/${fetchone}/delete`,
+      method: 'DELETE'
+    })
+      .then(() => {console.log('deleted'); page('/')})
+      .catch(errorCallback);
+  }
   // Article.prototype.updateRecord = function(callback) {
   //   $.ajax({
   //     url: `/articles/${this.article_id}`,

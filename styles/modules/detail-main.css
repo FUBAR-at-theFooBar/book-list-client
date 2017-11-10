@@ -18,9 +18,15 @@
   float: right;
 }
 
+#detailimg {
+  text-align: center;
+}
+
 #detail-main img {
-  width: 100%;
+  width: 75%;
+  height: auto;
   margin: 2em 0 1.2em 0;
+  box-shadow: 2px 2px 2px #8c2440;
 }
 
 #detail-main p {

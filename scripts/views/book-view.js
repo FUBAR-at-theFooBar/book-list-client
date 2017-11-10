@@ -43,6 +43,7 @@ var app = app || {};
   bookView.initFormPage = () => {
     $('.container').hide();
     $('#form-main').show();
+
     $('#addBook').off('submit');
     $('#addBook').on('submit', function(event){
       event.preventDefault();

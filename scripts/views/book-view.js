@@ -41,7 +41,7 @@ var app = app || {};
     let description = $('#detail-main p').text();
     let teaser = $('#detail-main p').text().substr(0, 200) + '...';
     $('#detail-main p').text(teaser);
-
+    $('#detail-main').off('click');
     $('#detail-main').on('click', '#readmore', function(e) {
       e.preventDefault();
       if ($('#detail-main p').text() === teaser) {

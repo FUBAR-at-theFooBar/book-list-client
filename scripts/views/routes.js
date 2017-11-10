@@ -6,8 +6,9 @@ page('/books/error', ctx => app.bookView.errorCallback(ctx));
 
 page('/books/new', ctx => app.bookView.initFormPage(ctx));
 
-page('/books/:book_id', ctx => app.Book.fetchOne(ctx, app.bookView.initDetailPage));
-
-page('/books/update/:book_id', ctx => app.Book.update(ctx, app.bookView.initUpdatePage));
+//we incindentally wrote more complex buttons instead of pagejs functions for these but we left them in to show we understood the concept.
+// page('/books/:book_id', ctx => app.Book.fetchOne(ctx, app.bookView.initDetailPage));
+//
+// page('/books/:book_id/update', ctx => initUpdatePage(ctx));
 
 page();

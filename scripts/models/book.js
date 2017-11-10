@@ -60,6 +60,11 @@ var __API_URL__ = 'https://ncjh-booklist.herokuapp.com';
       .catch (errorCallback);
   }
 
+  Book.update = (ctx, book) => {
+    $.put(`${__API_URL__}/api/v1/books/update/${ctx.params.book_id}`, book)
+      .then(() => {console.log('updated'); page('/')})
+      .catch(errorCallback);
+  }
 
   Book.create = book => {
     $.post(`${__API_URL__}/api/v1/books`, book)

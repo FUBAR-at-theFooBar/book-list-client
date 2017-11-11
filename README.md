@@ -3,38 +3,45 @@
 ##### Joy Hou & Nicholas Carignan
 
 Project for Code 301, Week 3
-Version 1.2.0
+Version 4.0
 
 ## Overview
-We are building an application to track the books we want to read. It pulls from a JSON file and populates an api with a database containing book information. the client side can then pull the book list or specific books to display on their page. we now have pagejs installed and working.
+This application tracks books that we want to read or have read. It pulls the initial book data from a JSON file or we can populate it in manually to an API with a database containing the book information. The client side displays the list of books, and the user can add a new book. With the admin password, the user can also update or delete a book. This is a single page application utilizing pageJS and AJAX.
 
 ## Getting Started
-Write some Codez
+You would need to create the HTML and CSS for each 'page', create a server and install dependencies, create the database, link everything together, and write all functions and code to create the working app. You will also need to deploy to Heroku and gh-pages.
 
 ## Architecture
 Languages: HTML, CSS, JavaScript, SQL.
-Libraries: highlight.pack.js, marked.js, JQuery, Express, Postgres, Bodyparser, Handlebars, icoMoon, NodeJS, cors, pageJS,
+Libraries: highlight.pack.js, marked.js, JQuery, Express, Postgres, Bodyparser, Handlebars, icoMoon, NodeJS, cors, pageJS
 
 ## Change log
-### Nov 7
-9am Started lab
-10am Finished deployment
+### Nov 7, 2017
+9:00am Started lab
+10:00am Finished deployment
 10:45am Loaded database manually
-11am Got wine
-2pm accomplished nothing, got frustrated, attended class
-<!-- 630 got pizza with feta cheese and double cheese and double sauce and roasted red peppers and chicken and white sauce and garlic and garlic crust -->
-730 got functionality mostly working
-800 Broke it again
-830 Rolled back to 730
-845 moved on to day 2
-### Nov 8
-9am kept working on pagejs functionality
-10am Did styling
-11 am went to gym/lunch
-1245 Finished pagejs, working on implementation
+11:00am - 2:00pm - Got stuck and then went to class
+7:30pm got functionality mostly working
+8:00pm Broke it again
+8:30pm Rolled back to 730
+8:45pm Moved on to day 2
+10:00pm Went home
+
+### Nov 8, 2017
+9:00am Kept working on pageJS functionality
+10:00am Did styling/wire frames
+11:00am Break
+12:45am - 2:00pm Finished pageJS, working on implementation
+
+### Nov 9, 2017
+9:00am - 2:00pm Kept working on implementation, ran into a couple bugs and spent the whole time trying to figure out the bugs
+5:00pm - 7:30pm Ironed out bugs, wrote update and delete code and implemented functionality
+
+## Nov 10, 2017
+11:00am - Started on and wrote admin page and implemented functionality
+12:00pm - Final styling and testing, bug fixing
 
 ## Credits and Collaborations
-
 Nicholas C and Joy Hou
 NormalizeCSS - https://necolas.github.io/normalize.css/
 jQuery - https://jquery.com

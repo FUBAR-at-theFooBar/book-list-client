@@ -42,6 +42,7 @@ var app = app || {};
     let teaser = $('#detail-main p').text().substr(0, 200) + '...';
     $('#detail-main p').text(teaser);
 
+    $('#detail-main').off('click');
     $('#detail-main').on('click', '#readmore', function(e) {
       e.preventDefault();
       if ($('#detail-main p').text() === teaser) {
@@ -113,7 +114,7 @@ var app = app || {};
     $('.container').hide();
     $('#admin-main').show();
     $('#admin').off('submit');
-    $('#admin').on('submit', function(event){
+    $('#admin').on('submit', function(event) {
       event.preventDefault();
       if(event.target.password.value !== app.Book.TOKEN) $('#incorrectPwd').text('incorrect password');
       else {

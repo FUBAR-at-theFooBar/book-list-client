@@ -113,7 +113,7 @@ var app = app || {};
     $('.container').hide();
     $('#admin-main').show();
     $('#admin').off('submit');
-    $('#admin').on('submit', function(event){
+    $('#admin').on('submit', function(event) {
       event.preventDefault();
       if(event.target.password.value !== app.Book.TOKEN) $('#incorrectPwd').text('incorrect password');
       else {
